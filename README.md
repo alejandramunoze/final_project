@@ -2,4 +2,16 @@
 Improvement on Hoya Hunters' Housing Search
 
 
-Google Maps API Key: AIzaSyD2gsPbMZtu0Il96cp7JhWIh8gfd1Sejxg
+For this website you need to retrieve a Google Maps API Key. It has a maximum of $200 credit per month
+
+To get one do the following:
+1. Go to https://console.cloud.google.com/
+2. Create a new project or select an existing one
+3. Enable the "Street View Image API" for your project
+4. Create API credentials (an API key) (you will need to input a credit card)
+
+Remember to store the API key in a secret location
+
+## Version 1
+In this first version, we built on from the website that we created in class. We added a navigation link to a new route (/house) which would show a predetermined street view image captured.
+

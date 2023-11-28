@@ -1,6 +1,6 @@
 # IMPORTS AT THE TOP
 
-# import os
+import os
 import json
 from pprint import pprint
 from statistics import mean
@@ -20,7 +20,7 @@ print("BACK IN UNEMPLOYMENT FILE")
 # load_dotenv() # go look in the .env file for any env vars
 
 # API_KEY = os.getenv("ALPHAVANTAGE_API_KEY")
-# API_KEY = os.getenv("ALPHAVANTAGE_API_KEY")
+
 #breakpoint()
 
 #quit()

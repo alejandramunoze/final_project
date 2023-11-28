@@ -3,9 +3,21 @@
 
 # this is the "web_app/routes/home_routes.py" file...
 
+
 from flask import Blueprint, request, render_template
 
 home_routes = Blueprint("home_routes", __name__)
+
+
+import os
+
+import requests
+from dotenv import load_dotenv
+
+load_dotenv()
+
+GOOGLE_MAPS_API = os.getenv("GOOGLE_MAPS_API")
+
 
 @home_routes.route("/")
 @home_routes.route("/home")

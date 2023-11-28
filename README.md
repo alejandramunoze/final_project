@@ -1,7 +1,7 @@
 # final_project
 Improvement on Hoya Hunters' Housing Search
 
-
+## Get an Google Maps API Key 
 For this website you need to retrieve a Google Maps API Key. It has a maximum of $200 credit per month
 
 To get one do the following:

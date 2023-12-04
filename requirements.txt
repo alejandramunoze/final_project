@@ -23,3 +23,9 @@ pytest
 # Install Flask packages
 
 Flask
+
+gspread
+
+google.colab 
+
+google.auth 

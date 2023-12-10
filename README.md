@@ -15,3 +15,12 @@ Remember to store the API key in a secret location
 ## Version 1
 In this first version, we built on from the website that we created in class. We added a navigation link to a new route (/house) which would show a predetermined street view image captured.
 
+## To run the app:
+
+conda activate my-first-env
+
+pip install -r requirements.txt
+
+export FLASK_APP=website_app
+
+flask run

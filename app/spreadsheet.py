@@ -1,18 +1,16 @@
 # imports at top
+import os
 import pandas as pd
 import gspread
-# from gspread import colab
-# from colab import auth
-# from auth import default
+from pprint import pprint
+
 
 # Authenticate with google
-gc = gspread.service_account(filename='path/to/your/service-account.json')
-# auth.authenticate_user()
-# creds, _ = default()
-# gc = gspread.authorize(creds)
+gc = gspread.service_account(filename="app\credentials.json")
+
 
 # Open spreadsheet
-spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1ihMA58RqFH2srdeGEne3sY4-xjhbKmU0XVdsWbs_gKY/edit#gid=0'
+spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1-NdNLEbaHBToP3eG_dBDNKhYcFeRkDTlwn0-_dK10Zs/edit?usp=sharing'
 workbook = gc.open_by_url(spreadsheet_url)
 sheet = workbook.sheet1  # or workbook.worksheet('SheetName') to access different sheet
 

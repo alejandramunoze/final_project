@@ -1,10 +1,12 @@
 # imports at top
 import pandas as pd
 import gspread
-from google.colab import auth
-from google.auth import default
+# from gspread import colab
+# from colab import auth
+# from auth import default
 
 # Authenticate with google
+gc = gspread.service_account(filename='path/to/your/service-account.json')
 # auth.authenticate_user()
 # creds, _ = default()
 # gc = gspread.authorize(creds)
@@ -26,9 +28,9 @@ print(df.head())
 df = pd.DataFrame(data[1:], columns=data[0])
 
 # Display data
-# print(type(df))
-# print(df.columns.tolist())
+print(type(df))
+print(df.columns.tolist())
 
 # EG print first row:
-# print("ROW #1:")
-# pprint(df.iloc[0].to_dict())
+print("ROW #1:")
+pprint(df.iloc[0].to_dict())

@@ -12,6 +12,7 @@ gc = gspread.service_account(filename="app\credentials.json")
 spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1-NdNLEbaHBToP3eG_dBDNKhYcFeRkDTlwn0-_dK10Zs/edit?usp=sharing'
 
 def fetch_spreadsheet(spreadsheet_url):
+    spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1-NdNLEbaHBToP3eG_dBDNKhYcFeRkDTlwn0-_dK10Zs/edit?usp=sharing'
     # Open spreadsheet
     workbook = gc.open_by_url(spreadsheet_url)
     sheet = workbook.sheet1  # or workbook.worksheet('SheetName') to access different sheet
@@ -22,18 +23,18 @@ def fetch_spreadsheet(spreadsheet_url):
     df = pd.DataFrame(data, columns=headers)
 
     # Preview Data Frame
-    print(df.head())
+    # print(df.head())
 
     # Convert to DataFrame for easier handling
     df = pd.DataFrame(data[1:], columns=data[0])
 
     # Display data
-    print(type(df))
-    print(df.columns.tolist())
+    # print(type(df))
+    # print(df.columns.tolist())
 
     # EG print first row:
-    print("ROW #1:")
-    pprint(df.iloc[0].to_dict())
+    # print("ROW #1:")
+    # pprint(df.iloc[0].to_dict())
 
     return df
 

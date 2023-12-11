@@ -9,10 +9,9 @@ from pprint import pprint
 gc = gspread.service_account(filename="app\credentials.json")
 
 # Get the URL
-spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1-NdNLEbaHBToP3eG_dBDNKhYcFeRkDTlwn0-_dK10Zs/edit?usp=sharing'
+SPREADSHEET_URL = 'https://docs.google.com/spreadsheets/d/1-NdNLEbaHBToP3eG_dBDNKhYcFeRkDTlwn0-_dK10Zs/edit?usp=sharing'
 
-def fetch_spreadsheet(spreadsheet_url):
-    spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1-NdNLEbaHBToP3eG_dBDNKhYcFeRkDTlwn0-_dK10Zs/edit?usp=sharing'
+def fetch_spreadsheet(spreadsheet_url=SPREADSHEET_URL):
     # Open spreadsheet
     workbook = gc.open_by_url(spreadsheet_url)
     sheet = workbook.sheet1  # or workbook.worksheet('SheetName') to access different sheet
@@ -26,7 +25,7 @@ def fetch_spreadsheet(spreadsheet_url):
     # print(df.head())
 
     # Convert to DataFrame for easier handling
-    df = pd.DataFrame(data[1:], columns=data[0])
+    # df = pd.DataFrame(data[1:], columns=data[0])
 
     # Display data
     # print(type(df))
@@ -38,4 +37,11 @@ def fetch_spreadsheet(spreadsheet_url):
 
     return df
 
-fetch_spreadsheet(spreadsheet_url)
+
+
+if __name__ == "__main__":
+
+    
+    df = fetch_spreadsheet()
+
+    breakpoint()

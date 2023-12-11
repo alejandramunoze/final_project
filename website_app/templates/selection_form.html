@@ -5,21 +5,22 @@
 
 {% block content %}
 
+    <form id="form" action="/filter" method="post">
     <p>
         <label for="neighbourhood"> Neighbourhood:</label>
         <select name="neighbourhood" id="neighbourhood">
-            <option value="west-georgetown">West Georgetown</option>
-            <option value="burleith">Burleith</option>
-            <option value="arlington">Arlington</option>
-            <option value="glover">Glover Park</option>
+            <option value="West Georgetown">West Georgetown</option>
+            <option value="Burleith">Burleith</option>
+            <option value="Arlington">Arlington</option>
+            <option value="Glover">Glover Park</option>
         </select>
     </p>
 
         <p>
             <label for="type"> Accomodation type:</label>
             <select name="type" id="type">
-                <option value="house">House</option>
-                <option value="apt">Apartment</option>
+                <option value="House">House</option>
+                <option value="Apartment">Apartment</option>
             </select>
             </p>
 
@@ -29,6 +30,7 @@
         <option value="1">One</option>
         <option value="2">Two</option>
         <option value="3">Three</option>
+        <option value="4">Four</option>
     </select>
     </p>
 
@@ -38,6 +40,7 @@
             <option value="1">One</option>
             <option value="2">Two</option>
             <option value="3">Three</option>
+            <option value="4">Four</option>
         </select>
     </p>
 
@@ -45,29 +48,30 @@
     <label for="bathroom-num"> Number of bathrooms:</label>
     <select name="bathroom-num" id="bathroom-num">
         <option value="1">One</option>
+        <option value="1.5">One point five</option>
         <option value="2">Two</option>
+        <option value="2.5">Two point five</option>
         <option value="3">Three</option>
-        <option value="4+">Four+</option>
+        <option value="4">Four</option>
     </select>
     </p>
 
     <p>
     <label for="patio"> Outside patio required?:</label>
     <select name="patio" id="patio">
-        <option value="Y">Yes</option>
-        <option value="N">No</option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
     </select>
     </p>
 
     <p>
         <label for="parking"> Parking spots required:</label>
         <select name="parking" id="parking">
-            <option value="Y">Yes</option>
-            <option value="N">No</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
         </select>
     </p>
 
-    <form id="form">
         <div>
             <button class="btn btn-success" type="submit">Submit</button>
         </div>

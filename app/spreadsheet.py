@@ -21,19 +21,6 @@ def fetch_spreadsheet(spreadsheet_url=SPREADSHEET_URL):
     headers = data.pop(0)
     df = pd.DataFrame(data, columns=headers)
 
-    # Preview Data Frame
-    # print(df.head())
-
-    # Convert to DataFrame for easier handling
-    # df = pd.DataFrame(data[1:], columns=data[0])
-
-    # Display data
-    # print(type(df))
-    # print(df.columns.tolist())
-
-    # EG print first row:
-    # print("ROW #1:")
-    # pprint(df.iloc[0].to_dict())
 
     return df
 

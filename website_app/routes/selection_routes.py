@@ -16,13 +16,10 @@ def features():
 def filter_data():
     print(request.form)
     # Retrieve form data
-    neighbourhood = request.form['neighbourhood']
     accomodation = request.form['type']
     single_num = request.form['single-num']
     double_num = request.form['double-num']
     bathroom_num = request.form['bathroom-num']
-    patio = request.form['patio']
-    parking = request.form['parking']
 
     # Get spreadsheet data
     df = fetch_spreadsheet(spreadsheet_url)
@@ -31,14 +28,11 @@ def filter_data():
 
     # Filter spreadsheet data based on selected data
     filtered_data = [entry for entry in spreadsheet_data if 
-                     entry['neighborhood'] == neighbourhood and
                      entry['type'] == accomodation and
                      entry['single-num'] == single_num and 
                      entry['double-num'] == double_num and
-                     entry['bathroom-num'] == bathroom_num and
-                     entry['patio'] == patio and
-                     entry['parking'] == parking
-                      ]
+                     entry['bathroom-num'] == bathroom_num
+                    ]
 
     if any(filtered_data):
     # Render a template to display filtered data

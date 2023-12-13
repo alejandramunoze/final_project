@@ -17,3 +17,14 @@ In this first version, we built on from the website that we created in class. We
 
 ## Google Spreadsheet Access:
 Same as with the Google Maps API, remember to download the .json credentials of your service account from your Google Cloud system
+
+## To run the app:
+
+conda activate my-first-env
+
+pip install -r requirements.txt
+
+export FLASK_APP=website_app
+
+flask run
+

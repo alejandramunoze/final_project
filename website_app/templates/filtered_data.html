@@ -1,4 +1,3 @@
-
 {% extends "bootstrap_5_layout.html" %}
 {% set active_page = "filtered_data" %}
 
@@ -24,14 +23,14 @@
         <title>Property Information</title>
     </head>
 
+    
     <body>
         <div class="container mt-5">
-
-            {% for results in data %}
+            {% for result in data %}
                 <div class="result-container mt-4 p-3 rounded" style="border: 1px solid #0263fe;">
                     <div class="row">
                         {% set header_value = None %}
-                        {% for key, value in results.items() %}
+                        {% for key, value in result.items() %}
                             {% if loop.index == 3 %}
                                 {% set header_value = value %}
                                 <h4>{{ custom_display_name(key) }}: {{ header_value }}</h4>
@@ -45,19 +44,21 @@
                             {% endif %}
                         {% endfor %}
                     </div>
-                    {% if results['comments'] %}
+                    {% if result['comments'] %}
                         <div class="row mt-3">
                             <div class="col-md-12">
-                                <p><strong>Comments:</strong> {{ results['comments'] }}</p>
+                                <p><strong>Comments:</strong> {{ result['comments'] }}</p>
                             </div>
                         </div>
                     {% endif %}
+                    <div>
+                        <p><strong>Street View:</strong></p>
+                        <p><strong> {{street_view_data}} </strong></p>
+                        <img src="{{ street_view_data[result] }}" alt="Street View">
+                    </div>
+
                 </div>
             {% endfor %}
         </div>
     </body>
-
-
-
-    
 {% endblock %}

@@ -13,7 +13,6 @@ load_dotenv() #> invoking this function loads contents of the ".env" file into t
 
 GOOGLE_MAPS_API = os.getenv("GOOGLE_MAPS_API")
 
-
 house_routes = Blueprint('house_routes', __name__)
 
 @house_routes.route('/house')
@@ -21,7 +20,7 @@ def house():
 
     api_key = GOOGLE_MAPS_API
     # Replace 'LATITUDE,LONGITUDE' with the actual coordinates (e.g., '40.748817,-73.985428')
-    location = '40.748817,-73.985428'
+    location =  '38.9035843, -77.06356319999999'
 
     image_url = get_street_view_image(api_key, location)
 

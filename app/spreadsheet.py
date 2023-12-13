@@ -2,14 +2,15 @@
 import os
 import pandas as pd
 import gspread
+from dotenv import load_dotenv
 from pprint import pprint
 
+load_dotenv()
 
 # Authenticate with google
 gc = gspread.service_account(filename="app\credentials.json")
+SPREADSHEET_URL = os.getenv("SPREADSHEET_URL")
 
-# Get the URL
-SPREADSHEET_URL = 'https://docs.google.com/spreadsheets/d/1-NdNLEbaHBToP3eG_dBDNKhYcFeRkDTlwn0-_dK10Zs/edit?usp=sharing'
 
 def fetch_spreadsheet(spreadsheet_url=SPREADSHEET_URL):
     # Open spreadsheet
@@ -23,8 +24,6 @@ def fetch_spreadsheet(spreadsheet_url=SPREADSHEET_URL):
 
 
     return df
-
-
 
 if __name__ == "__main__":
 

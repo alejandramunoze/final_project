@@ -1,0 +1,59 @@
+
+
+{% extends "bootstrap_5_layout.html" %}
+{% set active_page = "selection_form" %}
+
+{% block content %}
+
+    <form id="form" action="/filter" method="post">
+
+        <p>
+            <label for="type"> Accomodation type:</label>
+            <select name="type" id="type">
+                <option value="House">House</option>
+                <option value="Apartment">Apartment</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="single-num"> Number of single rooms:</label>
+            <select name="single-num" id="single-num">
+                <option value="0">0</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+                <option value="4">Four</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="double-num"> Number of double rooms:</label>
+            <select name="double-num" id="double-num">
+                <option value="0">0</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+                <option value="4">Four</option>
+            </select>
+        </p>
+
+        <p>
+            <label for="bathroom-num"> Number of bathrooms:</label>
+            <select name="bathroom-num" id="bathroom-num">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="1.5">1.5</option>
+                <option value="2">2</option>
+                <option value="2.5">2.5</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </p>
+            <div>
+                <button class="btn btn-success" type="submit">Submit</button>
+            </div>
+    </form>
+
+
+
+{% endblock %}

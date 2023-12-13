@@ -1,0 +1,65 @@
+{% extends "bootstrap_5_layout.html" %}
+{% set active_page = "filtered_data" %}
+
+{% macro custom_display_name(key) %}
+    {% if key == 'apt-num' %}
+        Apartment Number
+    {% elif key == 'single-num' %}
+        Number of Single Rooms
+    {% elif key == 'double-num' %}
+        Number of Double Rooms
+    {% elif key == 'bathroom-num' %}
+        Number of Bathrooms
+    {% else %}
+        {{ key | capitalize }}
+    {% endif %}
+{% endmacro %}
+
+{% block content %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+        <title>Property Information</title>
+    </head>
+
+    
+    <body>
+        <div class="container mt-5">
+            {% for result in data %}
+                <div class="result-container mt-4 p-3 rounded" style="border: 1px solid #0263fe;">
+                    <div class="row">
+                        {% set header_value = None %}
+                        {% for key, value in result.items() %}
+                            {% if loop.index == 3 %}
+                                {% set header_value = value %}
+                                <h4>{{ custom_display_name(key) }}: {{ header_value }}</h4>
+                            {% elif loop.index > 3 and key != 'comments' %}
+                                <div class="col-md-4">
+                                    <p><strong>{{ custom_display_name(key) }}:</strong> {{ value }}</p>
+                                </div>
+                                {% if loop.index % 3 == 0 %}
+                                    </div><div class="row">
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    {% if result['comments'] %}
+                        <div class="row mt-3">
+                            <div class="col-md-12">
+                                <p><strong>Comments:</strong> {{ result['comments'] }}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                    <div>
+                        <p><strong>Street View:</strong></p>
+                        {% set current_index = loop.index0 %}
+                        <p> {{ street_view_data[current_index]['street_view_url'] }} </p>
+                        <p> Due to some issues with Street View, please disregard the picture if it doesn't show a house... </p>
+                        <img src="{{ street_view_data[current_index]['street_view_url'] }}" alt="Street View">
+                    </div>                    
+                </div>
+            {% endfor %}
+        </div>
+    </body>
+{% endblock %}

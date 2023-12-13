@@ -10,7 +10,6 @@ home_routes = Blueprint("home_routes", __name__)
 
 
 import os
-
 import requests
 from dotenv import load_dotenv
 

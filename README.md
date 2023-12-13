@@ -15,6 +15,9 @@ Remember to store the API key in a secret location
 ## Version 1
 In this first version, we built on from the website that we created in class. We added a navigation link to a new route (/house) which would show a predetermined street view image captured.
 
+## Google Spreadsheet Access:
+Same as with the Google Maps API, remember to download the .json credentials of your service account from your Google Cloud system
+
 ## To run the app:
 
 conda activate my-first-env
@@ -24,3 +27,4 @@ pip install -r requirements.txt
 export FLASK_APP=website_app
 
 flask run
+

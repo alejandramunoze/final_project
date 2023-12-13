@@ -1,10 +1,17 @@
 
 # street_view.py
 
+import os
 import requests
+from dotenv import load_dotenv
+load_dotenv() #> invoking this function loads contents of the ".env" file into the script's environment...
+api_key = os.getenv("GOOGLE_MAPS_API")
+meta_base = 'https://maps.googleapis.com/maps/api/streetview/metadata?'
+
+
 
 def get_street_view_image(api_key, location, size="600x300", fov=90, heading=0, pitch=0):
-    base_url = "https://maps.googleapis.com/maps/api/streetview"
+    base_url = "https://maps.googleapis.com/maps/api/streetview?"
     params = {
         "size": size,
         "location": location,
@@ -24,6 +31,7 @@ def get_street_view_image(api_key, location, size="600x300", fov=90, heading=0, 
 
 
 def get_coordinates(api_key, address):
+    
     base_url = "https://maps.googleapis.com/maps/api/geocode/json"
     params = {
         "address": address,
@@ -42,3 +50,14 @@ def get_coordinates(api_key, address):
         print(f"Error: {response.status_code}")
         print(data)
         return None
+
+
+
+if __name__ == "__main__":
+    
+    address = input("Please input the address: ")
+    location = get_coordinates(api_key, address)
+
+    url = get_street_view_image(api_key, location, size="600x300", fov=90, heading=0, pitch=0)
+    print(url)
+

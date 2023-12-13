@@ -53,10 +53,11 @@
                     {% endif %}
                     <div>
                         <p><strong>Street View:</strong></p>
-                        <p><strong> {{street_view_data}} </strong></p>
-                        <img src="{{ street_view_data[result] }}" alt="Street View">
-                    </div>
-
+                        {% set current_index = loop.index0 %}
+                        <p> {{ street_view_data[current_index]['street_view_url'] }} </p>
+                        <p> Due to some issues with Street View, please disregard the picture if it doesn't show a house... </p>
+                        <img src="{{ street_view_data[current_index]['street_view_url'] }}" alt="Street View">
+                    </div>                    
                 </div>
             {% endfor %}
         </div>

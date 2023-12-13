@@ -1,5 +1,6 @@
 {% extends "bootstrap_5_layout.html" %}
 {% set active_page = "filtered_data" %}
+{% set tab_title = "Search Results" %}
 
 {% macro custom_display_name(key) %}
     {% if key == 'apt-num' %}
@@ -16,6 +17,7 @@
 {% endmacro %}
 
 {% block content %}
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">

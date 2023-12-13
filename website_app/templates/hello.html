@@ -1,14 +1,16 @@
-
-
 {% extends "bootstrap_5_layout.html" %}
-{% set active_page = "about" %}
+{% set active_page = "hello" %}
+{% set tab_title = "Hello Page" %}
 
 {% block content %}
 
-    <h1>{{ message }}</h1>
+    <!-- Centered image with rounded border -->
+    <div class="d-flex justify-content-center align-items-center mt-3">
+        <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.georgetown.edu%2Fabout%2F&psig=AOvVaw2zoD2MHW_haQiXfCRTqufa&ust=1702571777168000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCJDY0qPsjIMDFQAAAAAdAAAAABAD" alt="Description of the image" class="rounded-circle" style="width: 30%; height: auto;">
+    </div>
 
-    <p>This is a paragraph on the "hello" page.</p>
-
-    <p> {{ x }} </p>
-
+    <!-- Add a button underneath the image with a link -->
+    <div class="mt-3 text-center">
+        <a href="https://forms.gle/pdYrFbuifAhMbzQY7" class="btn btn-primary">Visit Website</a>
+    </div>
 {% endblock %}

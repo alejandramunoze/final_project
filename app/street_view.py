@@ -57,6 +57,7 @@ if __name__ == "__main__":
     
     address = input("Please input the address: ")
     location = get_coordinates(api_key, address)
+    print(location)
 
     url = get_street_view_image(api_key, location, size="600x300", fov=90, heading=0, pitch=0)
     print(url)

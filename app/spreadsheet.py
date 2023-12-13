@@ -22,12 +22,17 @@ def fetch_spreadsheet(spreadsheet_url=SPREADSHEET_URL):
     headers = data.pop(0)
     df = pd.DataFrame(data, columns=headers)
 
-
     return df
 
 if __name__ == "__main__":
 
-    
     df = fetch_spreadsheet()
+
+    headers = df.columns.tolist()
+    print(headers)
+
+    print(type(df[0]))
+    print(len(df))
+
 
     breakpoint()

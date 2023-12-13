@@ -1,6 +1,6 @@
 # imports at top
 import os
-import pandas as pd
+import pandas as pd 
 import gspread
 from dotenv import load_dotenv
 from pprint import pprint

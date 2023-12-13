@@ -5,7 +5,7 @@ from flask import Flask, render_template, request, Blueprint, flash, redirect
 from app.spreadsheet import fetch_spreadsheet
 from app.street_view import get_street_view_image, get_coordinates
 
-selection_routes = Blueprint('selection_routes', __name__)
+selection_routes = Blueprint('selection_routes', __name__) 
 
 load_dotenv() #> invoking this function loads contents of the ".env" file into the script's environment...
 GOOGLE_MAPS_API = os.getenv("GOOGLE_MAPS_API")

@@ -26,5 +26,5 @@ pip install -r requirements.txt
 
 export FLASK_APP=website_app
 
-flask run
+flask run 
 

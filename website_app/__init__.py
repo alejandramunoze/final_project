@@ -6,7 +6,7 @@ import os
 from flask import Flask
 
 from website_app.routes.home_routes import home_routes
-from website_app.routes.selection_routes import selection_routes
+from website_app.routes.selection_routes import selection_routes 
 
 SECRET_KEY = os.getenv("SECRET_KEY", default="super secret") # set this to something else on production!!!
 

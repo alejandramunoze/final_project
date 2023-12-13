@@ -1,13 +1,13 @@
 
 # street_view.py
 
-import os
+import os 
 import requests
 from dotenv import load_dotenv
 load_dotenv() #> invoking this function loads contents of the ".env" file into the script's environment...
 api_key = os.getenv("GOOGLE_MAPS_API")
 meta_base = 'https://maps.googleapis.com/maps/api/streetview/metadata?'
-
+ 
 
 
 def get_street_view_image(api_key, location, size="600x300", fov=90, heading=0, pitch=0):

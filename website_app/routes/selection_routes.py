@@ -21,6 +21,7 @@ def filter_data():
     print(request.form)
     # Retrieve form data
     accomodation = request.form['type']
+    neighborhood = request.form['neighborhood']
     single_num = request.form['single-num']
     double_num = request.form['double-num']
     bathroom_num = request.form['bathroom-num']
@@ -33,6 +34,7 @@ def filter_data():
     # Filter spreadsheet data based on selected data
     filtered_data = [entry for entry in spreadsheet_data if 
                      entry['type'] == accomodation and
+                     entry['neighborhood'] == neighborhood and
                      entry['single-num'] == single_num and 
                      entry['double-num'] == double_num and
                      entry['bathroom-num'] == bathroom_num

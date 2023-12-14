@@ -15,23 +15,28 @@ Remember to store the API key and credentials in a secret location.
 
 ## Set Up
 Create and activate a virtual environment:
-
+```sh
 conda create -n my-first-env python=3.10
 
 conda activate my-first-env
+```
 
 Install packages:
-
+```sh
 pip install -r requirements.txt
-
+```
 
 Create a ".env" file and paste in the following contents:
 
-# this is the ".env" file...
+### this is the ".env" file...
+```sh
 GOOGLE_MAPS_API = "____________" 
-SPREADSHEET_URL = (example)'https://docs.google.com/spreadsheets/____________________'
 
-# this is the credentials.json file...
+SPREADSHEET_URL = (example)'https://docs.google.com/spreadsheets/____________________'
+```
+
+### this is the credentials.json file...
+```sh
 {
     "type": "service_account",
     "project_id": "__________",
@@ -45,15 +50,19 @@ SPREADSHEET_URL = (example)'https://docs.google.com/spreadsheets/_______________
     "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/project_name_example.iam.gserviceaccount.com",
     "universe_domain": "googleapis.com"
   }
-
+```
 
 ## Usage
-One can use any of the functions (spreadsheet reading, street_view image retrieving and coordinates by address) by invoking the file:
-python -m app.spreadsheet
-python -m app.street_view
 
+One can use any of the functions (spreadsheet reading, street_view image retrieving and coordinates by address) by invoking the file:
+```sh
+python -m app.spreadsheet
+
+python -m app.street_view
+```
 
 ## Website Creation
+
 In this project we built on from the website that we created in class. Utilizing the home_routes.py file and the bootstrap template layout 5 we can find the "skeleton" for our site. 
 
 We have four main navigation links: 
@@ -64,22 +73,32 @@ We have four main navigation links:
 
 
 ## To run the app:
+
 Run the web app (then view in the browser at http://localhost:5000/):
 
-# First -
+### First -
+```sh
 conda activate my-first-env
+
 pip install -r requirements.txt
+```
 
-# Mac OS:
+### Mac OS:
+```sh
 FLASK_APP=web_app flask run
+```
 
-# Windows OS:
-# ... if `export` doesn't work for you, try `set` instead
-# ... or set FLASK_APP variable via ".env" file
+### Windows OS:
+#### ... if `export` doesn't work for you, try `set` instead
+#### ... or set FLASK_APP variable via ".env" file
+```sh
 export FLASK_APP=web_app
 flask run
-
+```
 
 ## Testing
 To run tests:
+```sh
 pytest
+```
+

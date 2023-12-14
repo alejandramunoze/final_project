@@ -46,7 +46,7 @@
 
     {% set nav_links = [
         ('/about', 'about', 'About Us'),
-        ('/hello', 'hello', 'Hello'),
+        ('/add_houses', 'add_houses', 'Add a New House'),
         ('/form', 'selection_form', 'Form'),
     ] -%}
     {% set active_page = active_page|default('home') -%}
@@ -82,7 +82,7 @@
                         {% endif %}
 
                         <li class="nav-item text-center {% if loop.index == nav_links|length // 2 %}centered{% endif %}">
-                            <a class="nav-link {{ is_active }}" href="{{href}}" style="font-size: 22px;">{{link_text}}</a>
+                            <a class="nav-link {{ is_active }}" href="{{href}}" style="font-size: 22px; margin: 0 15px;">{{link_text}}</a>
                         </li>
                     {% endfor %}
                 </ul>

@@ -18,13 +18,13 @@ load_dotenv()
 GOOGLE_MAPS_API = os.getenv("GOOGLE_MAPS_API")
 
 
-@home_routes.route("/")
-@home_routes.route("/home")
+@home_routes.route("/add_houses")
 def index():
-    print("HOME...")
+    print("If you have any houses that could be of interest for other future seniors...")
     # return "Welcome Home"
-    return render_template("home.html")
+    return render_template("add_houses.html")
 
+@home_routes.route("/")
 @home_routes.route("/about")
 def about():
     print("ABOUT...")

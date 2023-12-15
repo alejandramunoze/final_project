@@ -8,8 +8,13 @@ from pprint import pprint
 load_dotenv()
 
 # Authenticate with google
-gc = gspread.service_account(filename="credentials.json")
+DEFAULT_FILEPATH = os.path.join(os.path.dirname(__file__), "..", "credentials.json")
+GOOGLE_CREDENTIALS_FILEPATH = os.getenv("GOOGLE_CREDENTIALS_FILEPATH", default=DEFAULT_FILEPATH)
+
+
+gc = gspread.service_account(filename=GOOGLE_CREDENTIALS_FILEPATH)
 SPREADSHEET_URL = os.getenv("SPREADSHEET_URL")
+
 
 
 def fetch_spreadsheet(spreadsheet_url=SPREADSHEET_URL):

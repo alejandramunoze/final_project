@@ -66,8 +66,8 @@ jobs:
         MAILGUN_DOMAIN: ${{ secrets.MAILGUN_DOMAIN }}
         GOOGLE_MAPS_API: ${{ secrets.GOOGLE_MAPS_API }}
         SPREADSHEET_URL: ${{ secrets.SPREADSHEET_URL }}
-        GOOGLE_APPLICATION_CREDENTIALS: ${{ steps.auth.outputs.credentials_file_path }}
-        
+        GOOGLE_CREDENTIALS_FILEPATH: ${{ steps.auth.outputs.credentials_file_path }}
+
       run: |
         pytest
 

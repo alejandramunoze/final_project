@@ -34,6 +34,8 @@ GOOGLE_MAPS_API = "____________"
 
 SPREADSHEET_URL = (example)'https://docs.google.com/spreadsheets/____________________'
 ```
+For the above "SPREADSHEET_URL" used in this Housing Platform, contact atm92@georgetown.edu.
+
 
 ### this is the credentials.json file...
 ```sh
@@ -51,6 +53,15 @@ SPREADSHEET_URL = (example)'https://docs.google.com/spreadsheets/_______________
     "universe_domain": "googleapis.com"
   }
 ```
+
+In order to render the website later, this repository contains modifications of the above .json file in order to facilitate its codification and none disclosure. For that, we will store in the .env file the information from the credentials.json file:
+
+```sh
+PRIVATE_KEY_ID = "___combination of numbers and letters___"
+PRIVATE_KEY = "-----BEGIN PRIVATE KEY-----...............\n-----END PRIVATE KEY-----\n"
+CLIENT_ID = "___list of numbers___"
+```
+
 
 ## Usage
 

@@ -43,18 +43,7 @@ jobs:
     # https://github.com/google-github-actions/auth
     #
 
-    
-    - id: 'auth'
-      name: 'Authenticate to Google Cloud'
-      uses: 'google-github-actions/auth@v2'
-      with:
-        # uses this encrypted secret set via github repo settings
-        # which is essentially a copy of the JSON credentials file contents (for the dev project)
-        credentials_json: '${{ secrets.GOOGLE_API_CREDENTIALS }}'
-        # this will create a credentials file with a randomized name
-        create_credentials_file:  true
-
-
+  
 
     - name: Test with pytest
       env:

@@ -116,3 +116,5 @@ To run tests:
 pytest
 ```
 
+## Rendering
+Include "gunicorn" in the requirements.txt file and render it as a website on render.com!
